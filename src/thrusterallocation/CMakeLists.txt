@@ -13,6 +13,7 @@ find_package(sensor_msgs REQUIRED)
 
 add_executable(thrusterallocation
   src/thrusterallocate.cpp
+        include/thrusterallocate.hpp
 )
 target_include_directories(thrusterallocation PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/include 
@@ -24,6 +25,17 @@ ament_target_dependencies(thrusterallocation
   std_msgs
   sensor_msgs
 )
+
+install(
+        TARGETS thrusterallocation
+        DESTINATION lib/${PROJECT_NAME}
+)
+
+install(
+        DIRECTORY include/
+        DESTINATION include
+)
+
 
 
 if(BUILD_TESTING)

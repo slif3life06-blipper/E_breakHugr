@@ -34,10 +34,8 @@ endif()
 
 # Create executable
 add_executable(ros2_test
-  src/ros2_test.cpp
+        src/ros2_test.cpp
         include/ros2_test.hpp
-        ../Safety_net/src/Safety_net.cpp
-        ../Safety_net/src/Safety_net.h
 )
 
 # Find header files
